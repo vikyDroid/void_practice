@@ -9,6 +9,14 @@ public class Stack<T> {
         head = newNode;
     }
 
+    public void add(T data) {
+        push(data);
+    }
+
+    public void delete() {
+        pop();
+    }
+
     public T pop() {
         if (head == null) {
             return null;

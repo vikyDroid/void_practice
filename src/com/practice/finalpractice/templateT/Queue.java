@@ -5,14 +5,35 @@ public class Queue<T> {
 
     public void enqueue(T data) {
         Node<T> newNode = new Node<>(data);
-        newNode.next = head;
-        head = newNode;
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        Node<T> temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
+    }
+
+    public void add(T data) {
+        enqueue(data);
     }
 
     public T dequeue() {
+        if (head == null) {
+            return null;
+        }
         T data = head.data;
         head = head.next;
         return data;
+    }
+    public T poll(){
+        return dequeue();
+    }
+
+    public boolean isEmpty() {
+        return head == null;
     }
 
     public void printAll() {
@@ -31,6 +52,9 @@ public class Queue<T> {
         queue.enqueue(30);
         queue.enqueue(40);
         queue.enqueue(50);
+        queue.printAll();
+        System.out.println("\nItem Deque : " + queue.dequeue());
+        System.out.println();
         queue.printAll();
         System.out.println("\nItem Deque : " + queue.dequeue());
         System.out.println();

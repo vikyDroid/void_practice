@@ -34,20 +34,20 @@ public class MergeKSortedArr {
                 new MergeKSortedArr().mergeKSorted(new int[][]{arr1, arr2, arr3})));
     }
 
+    class ArrayContainer implements Comparable<ArrayContainer> {
+        int[] arr;
+        int index;
+
+        public ArrayContainer(int[] arr, int i) {
+            this.arr = arr;
+            index = i;
+        }
+
+        @Override
+        public int compareTo(@NotNull ArrayContainer o) {
+            return this.arr[this.index] - o.arr[o.index];
+        }
+    }
 
 }
 
-class ArrayContainer implements Comparable<ArrayContainer> {
-    int[] arr;
-    int index;
-
-    public ArrayContainer(int[] arr, int i) {
-        this.arr = arr;
-        index = i;
-    }
-
-    @Override
-    public int compareTo(@NotNull ArrayContainer o) {
-        return this.arr[this.index] - o.arr[o.index];
-    }
-}

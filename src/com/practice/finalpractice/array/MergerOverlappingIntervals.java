@@ -1,4 +1,4 @@
-package com.practice.finalpractice.array.meregInterval;
+package com.practice.finalpractice.array;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -55,4 +55,23 @@ public class MergerOverlappingIntervals {
             index++;
         }
     }
+
+    public static class Interval {
+        int start, end;
+
+         Interval(int start, int end) {
+            this.start = start;
+            this.end = end;
+        }
+
+        @Override
+        public String toString() {
+            return "Interval{" +
+                    "start=" + start +
+                    ", end=" + end +
+                    '}';
+        }
+    }
 }
+
+
