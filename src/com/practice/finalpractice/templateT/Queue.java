@@ -28,8 +28,27 @@ public class Queue<T> {
         head = head.next;
         return data;
     }
-    public T poll(){
+
+    public T poll() {
         return dequeue();
+    }
+
+    public T top() {
+        return head.data;
+    }
+
+    public T peek() {
+        return top();
+    }
+
+    public int length() {
+        Node<T> temp = head;
+        int count = 0;
+        while (temp != null) {
+            count++;
+            temp = temp.next;
+        }
+        return count;
     }
 
     public boolean isEmpty() {

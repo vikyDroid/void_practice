@@ -22,6 +22,15 @@ public class LinkedList<T> {
         temp.next = newNode;
     }
 
+    public int length() {
+        int len = 0;
+        while (head != null) {
+            len++;
+            head = head.next;
+        }
+        return len;
+    }
+
     public void addAfter(T data, T after) {
         Node<T> newNode = new Node<T>(data);
         Node<T> afterNode = findNode(after);

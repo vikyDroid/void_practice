@@ -41,23 +41,29 @@ public class Tree<T> {
         if (root == null) return;
         int n = getHeight(root);
         for (int i = 1; i <= n; i++) {
-            printLevelOrder(root, i);
+            levelOrder2(root, i);
+//            System.out.println();  //To print levels in next line
         }
     }
 
-    private void printLevelOrder(Node<T> root, int level) {
+    private void levelOrder2(Node<T> root, int level) {
         if (root == null) return;
         if (level == 1) {
             System.out.print(root.data + " ");
         } else if (level > 1) {
-            printLevelOrder(root.left, level - 1);
-            printLevelOrder(root.right, level - 1);
+            levelOrder2(root.left, level - 1);
+            levelOrder2(root.right, level - 1);
         }
     }
 
-    //Efficient
+    /**
+     * Efficient
+     */
     public void levelOrder() {
-        if (root == null) return;
+        if (root == null) {
+            System.out.println("Tree is empty");
+            return;
+        }
         Queue<Node<T>> q = new Queue<>();
         q.add(root);
         while (!q.isEmpty()) {
