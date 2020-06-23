@@ -1,4 +1,4 @@
-package com.practice.test;
+package com.practice.callbyvalue;
 
 public class MyDeepInt {
     public MyInt myInt;
