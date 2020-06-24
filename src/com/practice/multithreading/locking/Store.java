@@ -14,7 +14,6 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class Store {
     Semaphore semaphore = new Semaphore(23);
-    Mutex
     private final MyCallBack callBack;
     private final ExecutorService executor = Executors.newFixedThreadPool(2);
     private final List<Item> items = Arrays.asList(new Item("Towel", 100),
@@ -30,7 +29,6 @@ public class Store {
     void syncPrices() {
         ReentrantReadWriteLock.WriteLock lock = (ReentrantReadWriteLock.WriteLock) readWriteLock.writeLock();
         executor.execute(() -> {
-            ReentrantLock  readWriteLock = new ReentrantLock()
             lock.lock();
             try {
                 Thread.sleep(2000);
