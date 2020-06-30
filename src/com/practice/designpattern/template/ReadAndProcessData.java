@@ -8,7 +8,7 @@ public abstract class ReadAndProcessData {
         saveData();
     }
 
-     abstract void readData();
+    abstract void readData();
 
     public abstract void processData();
 
