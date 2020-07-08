@@ -11,7 +11,7 @@ public class Odd implements Runnable {
     public void run() {
         while (true) {
             synchronized (pojo) {
-                while (pojo.i % 2 == 0) {
+                while (pojo.i % 2 == 0) { // To avoid spurious wakeup
                     try {
                         pojo.wait();
                     } catch (InterruptedException e) {

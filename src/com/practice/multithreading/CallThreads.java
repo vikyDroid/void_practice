@@ -1,14 +1,10 @@
 package com.practice.multithreading;
 
-import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
 
 public class CallThreads {
-    transient String password;
-    volatile String hash;
-
     public static void main(String[] args) {
         Pojo pojo = new Pojo(1);
         Thread t1 = new Thread(new Odd(pojo), "Odd Thread");
@@ -26,6 +22,15 @@ public class CallThreads {
         executor.execute(new Odd(pojo));
         executor.execute(new Even(pojo));
         executor.shutdown();
+
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
+
+        t1.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+            @Override
+            public void uncaughtException(Thread t, Throwable e) {
+                e.printStackTrace();
+            }
+        });
 
     }
 }

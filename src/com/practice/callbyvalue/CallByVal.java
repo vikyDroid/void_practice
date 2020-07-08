@@ -1,7 +1,7 @@
 package com.practice.callbyvalue;
 
-import com.practice.oldpractice.ll.LinkedList;
-import com.practice.oldpractice.node.Node;
+import com.practice.practice.oldpractice.ll.LinkedList;
+import com.practice.practice.oldpractice.node.Node;
 
 public class CallByVal {
 
