@@ -6,7 +6,6 @@ public class KMostFrequent {
 
     public List<String> kMostFrequent(String[] arr, int k) {
         int n = arr.length;
-        List<String> res = new ArrayList<>();
         Map<String, Integer> map = new HashMap<>();
         for (String key : arr) {
             map.put(key, map.getOrDefault(key, 0) + 1);
@@ -22,7 +21,7 @@ public class KMostFrequent {
             if (queue.size() > k)
                 queue.poll();
         }
-
+        List<String> res = new ArrayList<>();
         while (!queue.isEmpty()) {
             res.add(queue.poll().getKey());
         }

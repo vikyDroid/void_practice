@@ -1,8 +1,12 @@
 package com.practice.test;
 
 import com.practice.practice.finalpractice.tree.Node;
+import com.sun.corba.se.impl.orbutil.concurrent.Mutex;
 
 import java.util.*;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Dummy {
     public static void main(String[] args) {
@@ -22,6 +26,25 @@ public class Dummy {
         queue.add(1);
         queue.add(7);
         System.out.println(Arrays.toString(new PriorityQueue[]{queue}));
+
+        int a = 10, b = 100, c;
+        if ((c = b) != 10) {
+            //Mutex
+            System.out.println("efffffffffffffffffffffff");
+        }
+
+        Collections.synchronizedMap(map);
+        LinkedHashMap<Integer, Integer> linkedHashMap = new LinkedHashMap<>();
+
+        BlockingQueue<Integer> queue1;
+
+        ReentrantLock lock = new ReentrantLock();
+        Condition readCondition =  lock.newCondition();
+        try {
+            readCondition.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 

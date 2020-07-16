@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * In Progress, hence code is broken
  */
-public class LockMain {
+public class TestLocking {
     public static void main(String[] args) {
         AtomicBoolean syncing = new AtomicBoolean(true);
         AtomicBoolean invoicing = new AtomicBoolean(true);
@@ -22,12 +22,13 @@ public class LockMain {
             }
         });
 
-        store.syncPrices();
+//        store.syncPrices();
         store.createInvoice();
+        store.syncPrices();
 
 
         while (syncing.get() || invoicing.get()) {
-            //running
+//            System.out.println("Running");
         }
 
         System.out.println("Termination");

@@ -1,12 +1,12 @@
 package com.practice.practice.finalpractice.array;
 
 //Kadane's Algo
-public class LargestSumSubArray {
+public class MaxSumSubArray {
     public static void main(String[] args) {
         int[] arr = {-2, -3, 4, -1, -2, 1, 5, -3};
-        System.out.println(new LargestSumSubArray().largestSumSubArray(arr));
-        System.out.println(new LargestSumSubArray().largestSumSubArray2(arr));
-        System.out.println(new LargestSumSubArray().largestSumSubArray3(arr));
+        System.out.println(new MaxSumSubArray().largestSumSubArray(arr));
+        System.out.println(new MaxSumSubArray().largestSumSubArray2(arr));
+        System.out.println(new MaxSumSubArray().largestSumSubArray3(arr));
     }
 
     //O(n)

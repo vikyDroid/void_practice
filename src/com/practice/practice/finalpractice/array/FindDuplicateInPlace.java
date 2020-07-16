@@ -16,13 +16,13 @@ public class FindDuplicateInPlace {
     }
 
     //BEST handles 0 and more than 2 repeating as well
-    public void findDuplicated3(int[] numRay) {
-        for (int i = 0; i < numRay.length; i++) {
-            numRay[numRay[i] % numRay.length] = numRay[numRay[i] % numRay.length] + numRay.length;
+    public void findDuplicated3(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            arr[arr[i] % arr.length] = arr[arr[i] % arr.length] + arr.length;
         }
         System.out.println("The repeating elements are : ");
-        for (int i = 0; i < numRay.length; i++) {
-            if (numRay[i] >= numRay.length * 2) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] >= arr.length * 2) {
                 System.out.print(i + " ");
             }
         }

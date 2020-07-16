@@ -19,10 +19,8 @@ public class MergerOverlappingIntervals {
 
     public void mergeOverlappingIntervals(Interval[] arr) {
         int n = arr.length;
-
         Stack<Interval> stack = new Stack<>();
         stack.add(arr[0]);
-
         for (int i = 1; i < n; i++) {
             Interval top = stack.peek();
             Interval curr = arr[i];

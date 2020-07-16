@@ -31,8 +31,7 @@ public class PathSum {
 
     //From Leetcode
     private int maxPathSum(Node<Integer> root) {
-        if (root == null)
-            return 0;
+        if (root == null)  return 0;
         int left = Math.max(maxPathSum(root.left), 0);
         int right = Math.max(maxPathSum(root.right), 0);
         max = Math.max(max, root.data + left + right);
@@ -41,8 +40,7 @@ public class PathSum {
 
     //self but ALMOST same as above
     int maxPathSum2(Node<Integer> root) {
-        if (root == null)
-            return 0;
+        if (root == null) return 0;
         int left = maxPathSum2(root.left);
         int right = maxPathSum2(root.right);
         max2 = Math.max(max2, root.data + left + right);

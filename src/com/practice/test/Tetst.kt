@@ -1,5 +1,6 @@
 package com.practice.test
 
+//NOTE THIS
 typealias myAlias = List<String>
 
 fun main() {

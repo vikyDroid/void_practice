@@ -1,9 +1,8 @@
 package com.practice.equals;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
-public class MyPojo {
+public class MyEmployee {
     String name;
     int age;
     int height;
@@ -12,11 +11,10 @@ public class MyPojo {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        new ArrayList<>(new ArrayList<>());
-        MyPojo myPojo = (MyPojo) o;
-        return age == myPojo.age &&
-                height == myPojo.height &&
-                name.equals(myPojo.name);
+        MyEmployee myEmployee = (MyEmployee) o;
+        return age == myEmployee.age &&
+                height == myEmployee.height &&
+                Objects.equals(name, myEmployee.name);
     }
 
     @Override

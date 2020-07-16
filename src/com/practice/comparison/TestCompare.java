@@ -2,7 +2,7 @@ package com.practice.comparison;
 
 import java.util.*;
 
-public class Compare {
+public class TestCompare {
     public static void main(String[] args) {
         List<Person> list = new LinkedList<>();
         list.add(new Person("vivek", 26, 5.6));

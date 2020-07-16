@@ -10,6 +10,11 @@ public class Child extends Parent {
     public Child(int a, int b) {
         this(a);
         this.b = b;
+//        System.out.println("a: " + this.a + ", b: " + this.b);
+    }
+    public Child(int a, int b, int c){
+        this(a, b);
+        this.c = c;
     }
 
     Child() {

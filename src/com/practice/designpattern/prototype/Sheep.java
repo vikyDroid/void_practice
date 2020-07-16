@@ -8,7 +8,7 @@ public class Sheep implements Animal {
 
     @Override
     public Animal makeCopy() {
-        System.out.println("Sheep is being made");
+        System.out.println("Copy Sheep is being made");
 
         Sheep sheepObject = null;
 

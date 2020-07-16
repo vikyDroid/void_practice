@@ -27,9 +27,9 @@ public class Store {
     }
 
     void syncPrices() {
-        ReentrantReadWriteLock.WriteLock lock = (ReentrantReadWriteLock.WriteLock) readWriteLock.writeLock();
+        Lock writeLock = readWriteLock.writeLock();
         executor.execute(() -> {
-            lock.lock();
+            writeLock.lock();
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
@@ -39,18 +39,18 @@ public class Store {
                 item.setPrice(500);
             }
             System.out.println("Prices Hiked");
-            lock.unlock();
             callBack.syncing();
+            writeLock.unlock();
         });
     }
 
     void createInvoice() {
-        ReentrantReadWriteLock.ReadLock lock = (ReentrantReadWriteLock.ReadLock) readWriteLock.readLock();
+        Lock lock = readWriteLock.readLock();
         executor.execute(() -> {
             lock.lock();
             System.out.println("Total amount: " + getTotal());
-            lock.unlock();
             callBack.createInvoice();
+            lock.unlock();
         });
     }
 

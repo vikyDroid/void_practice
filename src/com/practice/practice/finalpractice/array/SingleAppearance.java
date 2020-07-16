@@ -2,11 +2,11 @@ package com.practice.practice.finalpractice.array;
 
 import java.util.HashMap;
 
-public class CheckSingleAppearance {
+public class SingleAppearance {
 
     public static void main(String[] args) {
         int[] arr = {7, 3, 5, 4, 5, 3, 4};
-        System.out.println(new CheckSingleAppearance().checkSingleAppearance(arr));
+        System.out.println(new SingleAppearance().checkSingleAppearance(arr));
     }
 
     //O(n)

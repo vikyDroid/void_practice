@@ -1,6 +1,6 @@
 package com.practice.designpattern.factory;
 
-public class Test {
+public class TestFactory {
 
     public static void main(String[] args) {
         Calculate calculate = null;

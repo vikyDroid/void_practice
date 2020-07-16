@@ -1,9 +1,9 @@
 package com.practice.initialization;
 
-public class Initialise {
+public class TestInitialisation {
 
     public static void main(String[] args) {
-        new Child();
+        System.out.println(new Child(10, 100, 1000));
 
 //        System.out.println(new Child(1));
 //        System.out.println("=========================");

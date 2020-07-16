@@ -1,7 +1,7 @@
 package com.practice.practice.finalpractice.templateT;
 
 public class LinkedList<T> {
-    Node<T> head;
+    public Node<T> head;
 
     public void add(T data) {
         Node<T> newNode = new Node<T>(data);

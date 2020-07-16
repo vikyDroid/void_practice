@@ -4,7 +4,7 @@ import com.practice.practice.finalpractice.templateT.Queue;
 import com.practice.practice.finalpractice.templateT.Stack;
 
 public class Tree<T> {
-    Node<T> root;
+    public Node<T> root;
 
     //Level Order insertion
     public void add(T data) {

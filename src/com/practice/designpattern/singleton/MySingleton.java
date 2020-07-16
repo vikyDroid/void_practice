@@ -2,8 +2,11 @@ package com.practice.designpattern.singleton;
 
 public class MySingleton {
 
-    static final Integer k=0;
-    private static volatile MySingleton mInstance;// write happens-before, any thread gets updated value only
+    /**
+     * Happens-before relationship is a guarantee that action performed by one thread
+     * is visible to another action in different thread.
+     */
+    private static volatile MySingleton mInstance;// write happens-before any subsequent read guaranteed
 
     private MySingleton() {
 
@@ -11,7 +14,7 @@ public class MySingleton {
 
     public static MySingleton getInstance() {
         if (mInstance == null) {
-            synchronized (k) {
+            synchronized (MySingleton.class) { // unlocking happens-before any subsequent locking
                 if (mInstance == null)
                     mInstance = new MySingleton();
             }

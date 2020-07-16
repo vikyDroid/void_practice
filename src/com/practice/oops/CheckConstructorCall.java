@@ -9,9 +9,15 @@ public class CheckConstructorCall {
 }
 
 class Parent {
-    Parent() {
-        System.out.println("Parent constructor");
+    int age;
+
+    Parent(int age) {
+        this.age = age;
     }
+
+//    Parent() {
+//        System.out.println("Parent constructor");
+//    }
 
     public String publicData = "public data";
     private String privateData = "private data";
@@ -21,6 +27,7 @@ class Parent {
 
 class Child extends Parent {
     Child() {
+        super(2);
         System.out.println("Child constructor");
     }
 }

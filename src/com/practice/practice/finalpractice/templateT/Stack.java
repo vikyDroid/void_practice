@@ -31,6 +31,10 @@ public class Stack<T> {
         return head.data;
     }
 
+    public T peek() {
+        return top();
+    }
+
     public boolean isEmpty() {
         return head == null;
     }

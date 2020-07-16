@@ -23,7 +23,7 @@ import java.lang.reflect.Modifier;
 /**
  * https://www.youtube.com/watch?v=agnblS47F18 Please follow this for explanation
  */
-public class TestingReflection {
+public class TestReflection {
 
     public static void main(String[] args) {
 

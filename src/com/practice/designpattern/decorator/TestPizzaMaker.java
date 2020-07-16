@@ -1,6 +1,6 @@
 package com.practice.designpattern.decorator;
 
-public class PizzaMaker {
+public class TestPizzaMaker {
     public static void main(String[] args) {
         Pizza pizza = new TomatoSauce(new Mozzarella(new PlainPizza()));
 

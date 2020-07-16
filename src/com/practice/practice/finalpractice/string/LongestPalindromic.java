@@ -2,16 +2,6 @@ package com.practice.practice.finalpractice.string;
 
 public class LongestPalindromic {
     public static void main(String[] args) {
-        /*Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter no. of test cases :-");
-        int t = scanner.nextInt();
-        while (t > 0) {
-            System.out.println("Enter String :-");
-            String str = scanner.next();
-            System.out.println(new LongestPalindromic().longestPalindromic(str));
-            t--;
-        }*/
-
         String str = "ggggeekkeefdsfdsf";
         System.out.println(new LongestPalindromic().longestPalindromic(str));
     }

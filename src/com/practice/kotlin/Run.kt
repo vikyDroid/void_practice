@@ -26,7 +26,7 @@ fun main() {
 
 }
 
-inline fun higherfunc(str: String, vv: String, myCall: (String) -> Unit, mmCal: (Int) -> Unit) {
+inline fun higherFunc(str: String, vv: String, myCall: (String) -> Unit, mmCal: (Int) -> Unit) {
     //inovkes the print() by passing the string str
     myCall("Vivelk")
     mmCal(2)
@@ -66,6 +66,7 @@ fun dummy() {
     }
     kotlin.jvm.functions.Function1<String, String>*/
 
+    //This way we use inner classes in kotlin
     val value = object : Human {
         override fun think() {
 

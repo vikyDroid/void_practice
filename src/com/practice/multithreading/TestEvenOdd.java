@@ -4,7 +4,7 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class CallThreads {
+public class TestEvenOdd {
     public static void main(String[] args) {
         Pojo pojo = new Pojo(1);
         Thread t1 = new Thread(new Odd(pojo), "Odd Thread");
@@ -22,6 +22,7 @@ public class CallThreads {
         executor.execute(new Odd(pojo));
         executor.execute(new Even(pojo));
         executor.shutdown();
+//        executor.a
 
         CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
 

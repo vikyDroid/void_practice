@@ -2,7 +2,7 @@ package com.practice.practice.finalpractice.numbers;
 
 public class HCF {
     public static void main(String[] args) {
-        int a = 7;
+        int a = 9;
         int b = 5;
         System.out.println(new HCF().findHCF(a, b));
         System.out.println(new HCF().findHCF2(a, b));

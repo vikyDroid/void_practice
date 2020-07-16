@@ -3,6 +3,12 @@ package com.practice.initialization;
 import javax.swing.*;
 
 public class Parent extends GrandParent {
+    String age;
+
+    public Parent(String age) {
+        this.age = age;
+    }
+
     private static final String TAG = "Parent";
 
     Parent() {

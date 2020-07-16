@@ -17,7 +17,7 @@ public class NextRight {
         tree.right.right.right = new Node(11);
 
 //        tree.levelOrder();
-        
+
 //        System.out.println();
 //        tree.preOrder();
         new NextRight().connect5(tree);
@@ -87,19 +87,19 @@ public class NextRight {
     public void connect4(Node root) {
         if (root == null) return;
         while (root != null) {
-            Node q = root;
-            while (q != null) {
-                if (q.left != null) {
-                    if (q.right != null) {
-                        q.left.nextRight = q.right;
+            Node temp = root;
+            while (temp != null) {
+                if (temp.left != null) {
+                    if (temp.right != null) {
+                        temp.left.nextRight = temp.right;
                     } else {
-                        q.left.nextRight = getNextRight(q);
+                        temp.left.nextRight = getNextRight(temp);
                     }
                 }
-                if (q.right != null) {
-                    q.right.nextRight = getNextRight(q);
+                if (temp.right != null) {
+                    temp.right.nextRight = getNextRight(temp);
                 }
-                q = q.nextRight;
+                temp = temp.nextRight;
             }
             if (root.left != null) {
                 root = root.left;
@@ -136,10 +136,8 @@ public class NextRight {
     private Node getNextRight(Node root) {
         Node temp = root.nextRight;
         while (temp != null) {
-            if (temp.left != null)
-                return temp.left;
-            if (temp.right != null)
-                return temp.right;
+            if (temp.left != null) return temp.left;
+            if (temp.right != null) return temp.right;
             temp = temp.nextRight;
         }
         return null;
