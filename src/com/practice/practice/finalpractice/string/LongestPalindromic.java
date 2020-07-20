@@ -2,7 +2,7 @@ package com.practice.practice.finalpractice.string;
 
 public class LongestPalindromic {
     public static void main(String[] args) {
-        String str = "ggggeekkeefdsfdsf";
+        String str = "gggggggeekkeeggfdsfdsf";
         System.out.println(new LongestPalindromic().longestPalindromic(str));
     }
 
