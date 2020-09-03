@@ -2,7 +2,7 @@ package com.practice.practice.practice3.dp;
 
 import java.util.Arrays;
 
-public class ClimbStairs {
+public class StairsClimb {
     public static void main(String[] args) {
         int n = 4;
         System.out.println(numWaysR(n));

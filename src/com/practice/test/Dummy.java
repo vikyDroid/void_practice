@@ -15,6 +15,7 @@ public class Dummy {
         String s = scanner.next();
         System.out.println("Entered String is: "+s);*/
 
+        double i = Math.pow(10, 10);
         HashMap<String, Object> map = new HashMap<>();
         map.values().iterator();
 
