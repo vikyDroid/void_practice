@@ -22,6 +22,15 @@ public class PenaltyShoot {
                 if (AG > BR && AG > BG) {
                     System.out.println(i + 1);
                     break;
+                } else if (BG > AR && BG > AG) {
+                    System.out.println(i + 1);
+                    break;
+                } else if (AG - BG > AR) {
+                    System.out.println(i + 1);
+                    break;
+                } else if (BG - AG > AR) {
+                    System.out.println(i + 1);
+                    break;
                 } else if (i == 2 * N - 1) {
                     System.out.println(i + 1);
                 }
