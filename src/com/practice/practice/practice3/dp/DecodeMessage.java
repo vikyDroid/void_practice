@@ -2,6 +2,7 @@ package com.practice.practice.practice3.dp;
 
 import java.util.Arrays;
 
+//https://www.youtube.com/watch?v=qli-JCrSwuk&t=16s
 public class DecodeMessage {
     public static void main(String[] args) {
         String s = "";
@@ -16,7 +17,7 @@ public class DecodeMessage {
 
     private static int maxWaysR(String s, int n) {
         if (n == 0) return 1;
-        if (s.charAt(s.length() - n) == '0') return 0;
+        if (s.charAt(s.length() - n) == '0') return 0;//seems a wrong line
         if (s.equals("")) return 1;
         int res = maxWaysR(s, n - 1);
         int beginIndex = s.length() - n;

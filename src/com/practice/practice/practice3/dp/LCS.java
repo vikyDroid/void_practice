@@ -3,8 +3,8 @@ package com.practice.practice.practice3.dp;
 public class LCS {
 
     public static void main(String[] args) {
-        String s1 = "AGGTAB";
-        String s2 = "GXTXAYB";
+        String s1 = "ABCDGH";
+        String s2 = "AEDFHR";
         System.out.println(lcsDP2(s1, s2));
         System.out.println(lcsR(s1, s2, 0, 0));
     }
@@ -23,17 +23,17 @@ public class LCS {
                     dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
             }
         }
-        int index = dp[m][n];//This the result num of LCS
+        int size = dp[m][n];//This the result num of LCS
 
         //Printing chars
-        char[] lcsChars = new char[index];
+        char[] lcsChars = new char[size];
         int i = m, j = n;
         while (i > 0 && j > 0) {
             if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
-                lcsChars[index - 1] = s1.charAt(i - 1);
+                lcsChars[size - 1] = s1.charAt(i - 1);
                 i--;
                 j--;
-                index--;
+                size--;
             } else if (dp[i - 1][j] > dp[i][j - 1]) {
                 i--;
             } else

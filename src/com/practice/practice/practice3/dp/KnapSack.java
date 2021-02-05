@@ -1,7 +1,7 @@
 package com.practice.practice.practice3.dp;
 
 import java.util.Arrays;
-
+//https://www.youtube.com/watch?v=nLmhmB6NzcM&t=924s
 public class KnapSack {
     public static void main(String[] args) {
         int[] val = {60, 100, 120};

@@ -47,6 +47,7 @@ public class LongestPalindromic {
         return res;
     }
 
+    //https://www.youtube.com/watch?v=_nCsPn7_OgI&t=260s
     //https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic/LongestPalindromicSubsequence.java
     private static int lpsDP(char[] chars) {
         int n = chars.length;

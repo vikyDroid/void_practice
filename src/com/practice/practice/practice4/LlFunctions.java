@@ -1,7 +1,7 @@
 package com.practice.practice.practice4;
 
-import com.practice.practice.finalpractice.templateT.LinkedList;
-import com.practice.practice.finalpractice.templateT.Node;
+import com.practice.practice.practice2.templateT.LinkedList;
+import com.practice.practice.practice2.templateT.Node;
 
 public class LlFunctions {
     public static void main(String[] args) {

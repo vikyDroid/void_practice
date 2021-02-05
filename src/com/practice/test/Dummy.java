@@ -1,10 +1,11 @@
 package com.practice.test;
 
-import com.practice.practice.finalpractice.tree.Node;
-import com.sun.corba.se.impl.orbutil.concurrent.Mutex;
+import com.practice.practice.practice2.tree.Node;
 
+import java.io.IOError;
 import java.util.*;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -14,6 +15,8 @@ public class Dummy {
         System.out.println("Enter some String");
         String s = scanner.next();
         System.out.println("Entered String is: "+s);*/
+
+
 
         double i = Math.pow(10, 10);
         HashMap<String, Object> map = new HashMap<>();
@@ -104,6 +107,7 @@ public class Dummy {
         }
     }
 
+    //WRONG
     boolean isBST(Node<Integer> root) {
         if (root == null)
             return true;

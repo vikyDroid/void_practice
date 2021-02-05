@@ -1,7 +1,7 @@
 package com.practice.practice.practice3.dp;
 
 import java.util.Arrays;
-
+//https://www.youtube.com/watch?v=cETfFsSTGJI
 public class FrogJump {
     public static void main(String[] args) {
         int[] arr = {1, 3, 6, 1, 0, 9};

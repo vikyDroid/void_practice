@@ -1,9 +1,9 @@
 package com.practice.practice.practice4;
 
-import com.practice.practice.finalpractice.templateT.Queue;
-import com.practice.practice.finalpractice.templateT.Stack;
-import com.practice.practice.finalpractice.tree.Node;
-import com.practice.practice.finalpractice.tree.Tree;
+import com.practice.practice.practice2.templateT.Queue;
+import com.practice.practice.practice2.templateT.Stack;
+import com.practice.practice.practice2.tree.Node;
+import com.practice.practice.practice2.tree.Tree;
 
 public class TreeFunctions {
     public static void main(String[] args) {
@@ -293,6 +293,7 @@ public class TreeFunctions {
         }
     }
 
+    //WRONG
     static boolean isBST(Node<Integer> root) {
         if (root == null) return true;
         if (root.left != null && root.left.data > root.data) return false;

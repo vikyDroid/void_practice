@@ -2,6 +2,9 @@ package com.practice.practice.practice3.dp;
 
 import java.util.Arrays;
 
+/**
+ * https://www.youtube.com/watch?v=DxhfziFFJNc
+ */
 public class LIS {
     public static void main(String[] args) {
         int[] arr = {3, 10, 2, 1, 20};
@@ -23,7 +26,6 @@ public class LIS {
         for (int i = 0; i < n; i++) {
             max = Math.max(max, dp[i]);
         }
-//        System.out.println(Arrays.toString(dp));
         return max;
     }
 }

@@ -2,6 +2,8 @@ package com.practice.comparison;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
+
 public class Person implements Comparable<Person> {
     String name;
     int age;
@@ -26,4 +28,17 @@ public class Person implements Comparable<Person> {
     public int compareTo(@NotNull Person o) {
         return this.age - o.age;
     }
+
+    /*@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+        Person person = (Person) o;
+        return age == person.age && Double.compare(person.height, height) == 0 && Objects.equals(name, person.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, height);
+    }*/
 }

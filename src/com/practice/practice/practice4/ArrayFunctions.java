@@ -1,6 +1,6 @@
 package com.practice.practice.practice4;
 
-import com.practice.practice.finalpractice.templateT.Stack;
+import com.practice.practice.practice2.templateT.Stack;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -135,6 +135,17 @@ public class ArrayFunctions {
         return Integer.MIN_VALUE;
     }
 
+
+    static int findMissing(int[] arr) {
+        int n = arr.length;
+        int sum = (1 + n + 1) * (n + 1) / 2;
+        int sumTemp = 0;
+        for (int val : arr) {
+            sumTemp += val;
+        }
+        return sum - sumTemp;
+    }
+
     static void findDuplicates(int[] arr, int duplicateByOrMore) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int key : arr) {
@@ -147,7 +158,6 @@ public class ArrayFunctions {
         }
     }
 
-    //Redo: Corrected
     static void findDuplicatesInPlace(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n; i++) {
@@ -160,15 +170,6 @@ public class ArrayFunctions {
         }
     }
 
-    static int findMissing(int[] arr) {
-        int n = arr.length;
-        int sum = (1 + n + 1) * (n + 1) / 2;
-        int sumTemp = 0;
-        for (int val : arr) {
-            sumTemp += val;
-        }
-        return sum - sumTemp;
-    }
 
     static int maxSumSubArray(int[] arr) {
         int maxSumSoFar = arr[0], maxSum = arr[0];
@@ -179,19 +180,18 @@ public class ArrayFunctions {
         return maxSumSoFar;
     }
 
-    //Redo, Recheck
     static int maxSumSubArrayWithPos(int[] arr) {
-        int maxSumSoFar = 0, maxSum = 0, start = 0, end = 0, s = 0;
+        int maxSumSoFar = Integer.MIN_VALUE, maxSum = 0, start = 0, end = 0, temp = 0;
         for (int i = 1; i < arr.length; i++) {
             maxSum += arr[i];
             if (maxSumSoFar < maxSum) {
                 maxSumSoFar = maxSum;
                 end = i;
-                start = s;
+                start = temp;
             }
-            if (maxSum + arr[i] > arr[i]) {
+            if (maxSum < 0) {
                 maxSum = 0;
-                s = i + 1;
+                temp = i + 1;
             }
         }
         System.out.println("Start Index: " + start);
@@ -199,7 +199,7 @@ public class ArrayFunctions {
         return maxSumSoFar;
     }
 
-    //Recheck, not verified
+    //Recheck, not verified  :: Verified on 28 jan 21, IT IS Wrong
     static void mergeInterval(Integer[][] arr) {
         Stack<Integer[]> stack = new Stack<>();
         for (Integer[] integers : arr) {
