@@ -23,7 +23,8 @@ public class CoinChange {
         if (sum == 0) return 1;
         if (sum < 0) return 0;
         if (n <= 0) return 0;
-        return ccR(arr, n - 1, sum) + ccR(arr, n, sum - arr[n - 1]);
+        return ccR(arr, n - 1, sum) //Coin not included
+                + ccR(arr, n, sum - arr[n - 1]); //Coin included
     }
 
     private static int ccMemo(int[] arr, int n, int sum, int[][] memo) {

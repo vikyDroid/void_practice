@@ -2,6 +2,7 @@ package com.practice.cloning;
 
 public class Employee implements Cloneable {
     int id;
+    float f;
     String name;
     Address address;
     MyImmutable myImmutable;
@@ -44,6 +45,7 @@ public class Employee implements Cloneable {
         Employee e = (Employee) super.clone();
         e.address = (Address) address.clone();
         e.myImmutable = (MyImmutable) myImmutable.clone();
+//        e.name= (String) name.clone();
 //        e.builder = builder.clone();
         return e;
     }

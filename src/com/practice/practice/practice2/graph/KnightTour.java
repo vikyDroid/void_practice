@@ -19,10 +19,10 @@ public class KnightTour {
     public int stepsRequired(int[][] mat, int row, int col) {
         LinkedList<Cell> list = new LinkedList<>();
         boolean[][] isVisited = new boolean[N + 1][N + 1];
-        Cell bfs = BFS(mat, row, col, isVisited, list);
+        Cell cell = BFS(mat, row, col, isVisited);
         System.out.println("\nItems in list: \n");
-        printAll(bfs);
-        return bfs.dis;
+        printAll(cell);
+        return cell.dis;
     }
 
     private void printAll(Cell cell) {
@@ -43,7 +43,7 @@ public class KnightTour {
      *
      * @return
      */
-    private Cell BFS(int[][] mat, int row, int col, boolean[][] isVisited, LinkedList<Cell> list) {
+    private Cell BFS(int[][] mat, int row, int col, boolean[][] isVisited) {
         Queue<Cell> queue = new Queue<>();
         Cell cell = new Cell(row, col, 0);
         isVisited[row][col] = true;

@@ -6,40 +6,41 @@ import java.util.Iterator;
 
 public class TestCloningInList {
     public static void main(String[] args) {
-        ArrayList<NewEmployee> listOriginal = new ArrayList<>();
-        listOriginal.add(new NewEmployee(2, "vivek"));
-        listOriginal.add(new NewEmployee(3, "rahul"));
-        listOriginal.add(new NewEmployee(1, "komal"));
-        listOriginal.add(new NewEmployee(4, "shahshank"));
-        listOriginal.add(new NewEmployee(5, "vicky"));
+        ArrayList<NewEmployee> original = new ArrayList<>();
+        original.add(new NewEmployee(2, "vivek"));
+        original.add(new NewEmployee(3, "rahul"));
+        original.add(new NewEmployee(1, "komal"));
+        original.add(new NewEmployee(4, "shahshank"));
+        original.add(new NewEmployee(5, "vicky"));
 
-//        for (int i = 0; i < 5; i++) {
-//            listOriginal.add(i + "");
-//        }
-//        System.out.println("Original: " + listOriginal);
-//        Object clone = listOriginal.clone();
-//        System.arraycopy();
-        ArrayList<NewEmployee> listClone = (ArrayList<NewEmployee>) listOriginal.clone();
-        for (NewEmployee newEmployee : listOriginal) {
+
+        //ArrayList().clone() would provide shallow copy only
+        ArrayList<NewEmployee> clone = new ArrayList<>();/*(ArrayList<NewEmployee>) original.clone()*/;
+        for (NewEmployee newEmployee : original) {
             try {
-                listClone.add((NewEmployee) newEmployee.clone());
+                clone.add((NewEmployee) newEmployee.clone());
             } catch (CloneNotSupportedException e) {
                 e.printStackTrace();
             }
         }
-        System.out.println(listOriginal.hashCode() == listClone.hashCode());
-//        listClone.get(2).age =  1000000;
-//        listClone.add(0, "100000000");
-//        System.out.println("Clone: " + clone);
-//        System.out.println("Original: " + listOriginal);
-//        listOriginal.clear();
+        System.out.println("Is Hashcode same :");
+        System.out.println(original.hashCode() == clone.hashCode());
 
-
-        for (int i = 0; i < listOriginal.size(); i++) {
-            if (listOriginal.get(i).hashCode() == listClone.get(i).hashCode()) {
-                System.out.println("SAME");
+        for (int i = 0; i < original.size(); i++) {
+            if (original.get(i).hashCode() == clone.get(i).hashCode()) {
+                System.out.println("Hashcode is : SAME");
             } else {
-                System.out.println("NOT-SAME");
+                System.out.println("Hashcode is : NOT-SAME");
+            }
+        }
+
+        original.get(0).age = 10000;
+        System.out.println("------------------" + clone.get(0).age);
+        for (int i = 0; i < original.size(); i++) {
+            if (original.get(i).hashCode() == clone.get(i).hashCode()) {
+                System.out.println("Hashcode is : SAME");
+            } else {
+                System.out.println("Hashcode is : NOT-SAME");
             }
         }
     }

@@ -15,10 +15,19 @@ public class MyEmployee {
         return age == myEmployee.age &&
                 height == myEmployee.height &&
                 Objects.equals(name, myEmployee.name);
+
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(name, age, height);
+    }
+
+    public static void main(String[] args) {
+        String s1 = "Dad";
+        String s2 = new String("Dad");
+
+        System.out.println(s1==s2);
+        System.out.println(s1.equals(s2));
     }
 }

@@ -9,13 +9,13 @@ public class NewEmployee implements Cloneable {
         this.name = name;
     }
 
-    @Override
+   /* @Override
     public String toString() {
         return "NewEmployee{" +
                 "age=" + age +
                 ", name='" + name + '\'' +
                 '}';
-    }
+    }*/
 
     @Override
     protected Object clone() throws CloneNotSupportedException {

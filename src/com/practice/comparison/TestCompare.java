@@ -1,5 +1,9 @@
 package com.practice.comparison;
 
+import com.practice.cloning.Address;
+import com.practice.cloning.Employee;
+import com.practice.cloning.MyImmutable;
+
 import java.util.*;
 
 public class TestCompare {
@@ -21,6 +25,19 @@ public class TestCompare {
         Collections.sort(list);
 //        Arrays.sort(new List[]{list});
         System.out.println(Arrays.toString(new List[]{list}));
+
+        ArrayList<Employee> list1 = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list1.add(new Employee(10, "Viv", new Address("Delhi", "India"),
+                    new MyImmutable(new StringBuilder("myImmutableData")), new StringBuilder("MyStringBuilder")));
+        }
+
+        list1.sort(new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                return 0;
+            }
+        });
 
     }
 }

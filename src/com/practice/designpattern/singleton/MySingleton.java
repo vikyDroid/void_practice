@@ -17,7 +17,7 @@ public class MySingleton {
 
     public static MySingleton getInstance() {
         if (mInstance == null) {
-            synchronized (MySingleton.class) { // unlocking happens-before any subsequent locking
+            synchronized (MySingleton.class) { // unlocking happens-before any subsequent locking, double check lock
                 if (mInstance == null)
                     mInstance = new MySingleton();
             }

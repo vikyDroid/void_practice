@@ -16,7 +16,7 @@ public class FrogJump {
         for (int i = 1; i < n; i++) {
             dp[i] = Integer.MAX_VALUE;
             for (int j = 0; j < i; j++) {
-                if (j + arr[j] >= i) {
+                if (i <= j + arr[j]) {
                     dp[i] = Math.min(dp[i], 1 + dp[j]);
                     navigation[i] = j;
                 }
