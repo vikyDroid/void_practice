@@ -1,18 +1,62 @@
 package com.practice.test;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static com.practice.practice.practice1.constants.MyConstants.a;
 import static com.practice.practice.practice1.constants.MyConstants.swap;
 
 public class Sample {
     public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            if (i == 5) continue;
-            System.out.println(i);
+
+//        ArrayList<Integer> list = new ArrayList<>(2);
+//        list.add(0, 100);
+//        list.add(1, 10);
+//        list.add(2, 10);
+//        for (int i : list) System.out.println(i);
+//        System.out.println(Arrays.toString((Integer[]) list.toArray()));
+//        System.out.println(Arrays.toString(new char[]{'a', 'a', 'a'}));
+
+        /*List<Item> queue = new LinkedList<>();
+        queue.add(new Item(144, 184));
+        queue.add(new Item(12, 2));
+        Collections.sort(queue);
+
+        for (Item i : queue) System.out.println(i);
+
+        new PriorityQueue<Integer>().poll();*/
+
+        List<String> list = Arrays.asList("RED","BLUE","BLACK","GREEN","BROWN");
+
+        // Java 8 and above:
+        List<String> filteredList = list.stream()
+                .filter(entry -> entry.startsWith("BL"))
+                .collect(Collectors.toList());
+        System.out.println(filteredList);
+    }
+
+    static class Item implements Comparable<Item> {
+        int x, y;
+
+        Item(int x, int y) {
+            this.x = x;
+            this.y = y;
         }
 
-//        "asdasd".su
+        @Override
+        public String toString() {
+            return "Item{" +
+                    "x=" + x +
+                    ", y=" + y +
+                    '}';
+        }
+
+        @Override
+        public int compareTo(@NotNull Sample.Item o) {
+            return o.x - this.x;
+        }
     }
 
     static int helper(String s) {
@@ -122,6 +166,8 @@ public class Sample {
             res[k++] = arr2[j++];
         }
         Math.floor(Double.MAX_VALUE);
+
+
         return res;
     }
 
